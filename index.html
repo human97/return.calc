@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Калькулятор доходности</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <main>
+        <section class="calc calc__left">
+
+            <div class="calc__wrapper">
+
+                <h2>
+                    Калькулятор доходности
+                </h2>
+                <div class="sum">
+                    <div class="word sum__word">
+                        <h3>Cумма</h3>
+                    </div>
+                    <div class="number sum__namber">
+                        <output id="outsum">1200000</output> &#8381;
+                    </div>
+                </div>
+                <div class="scale">
+                    <input id="rangeSum" type="range" min="0" max="5000000" value="1200000" step="10000">
+                </div>
+
+                <div class="term">
+                    <div class="word sum__word">
+                        <h3>Cрок</h3>
+                    </div>
+                    <div class="number sum__namber">
+                        <output id="outMonth">24</output> мес.
+                    </div>
+                </div>
+                <div class="scale">
+                    <input id="rangeMonth" type="range" min="0" max="60" value="24" step="1">
+                </div>
+
+                <div class="radio__btn">
+                    <div class="radio">
+                        <input class="percent" type="radio" name="contribution" id="conservative" checked value="0.09">
+                        <label for="conservative">Консервативный</label>
+                    </div>
+                    <div class="radio">
+                        <input class="percent" type="radio" name="contribution" id="balanced" value="0.18">
+                        <label for="balanced">Сбалансированный</label>
+                    </div>
+                    <div class="radio">
+                        <input class="percent" type="radio" name="contribution" id="risky" value="0.25">
+                        <label for="risky">Рискованный</label>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="calc calc__right">
+            <div class="calc__wrapper cwl">
+                <div class="output outputs_right">
+                    + <output id="return__deposit">
+                        80000
+                    </output> &#8381;
+                    <h3>6.5 % годовых</h3>
+                </div>
+                <!-- /.calc__output_left -->
+                <div class="barrels__wrap">
+                    <div class="barrel__wrap barrel__green">
+                        <div class="block1"></div>
+                        <div class="block2"></div>
+                        <div class="block3"></div>
+                    </div>
+                    <!-- /.block__wrap -->
+                    <div class="barrel__wrap barrel__white">
+                        <div class="block4"></div>
+                        <div class="block5"></div>
+                        <div class="block6"></div>
+                    </div>
+                    <!-- /.block__wrap -->
+
+                    <div class="dep__wrap">
+                        <p class="deposit">Депозит</p>
+                        <!-- <div class="round">?</div> -->
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.calc__wrapper -->
+
+            <div class="calc__wrapper cwr">
+                <div class="output outputs_right">
+                    + <output id="return__cityMoney">
+                        3500000
+                    </output> &#8381;
+                    <output>
+                        <h3 id="percent__right">25 % годовых</h3>
+                    </output>
+                </div>
+                <!-- /.calc__output_left -->
+                <div class="barrels__wrap">
+                    <div class="barrel__wrap barrel__green">
+                        <div class="block1"></div>
+                        <div class="block2 block2__right"></div>
+                        <div class="block3"></div>
+                    </div>
+                    <!-- /.block__wrap -->
+                    <div class="barrel__wrap barrel__white">
+                        <div class="block4"></div>
+                        <div class="block5"></div>
+                        <div class="block6"></div>
+                    </div>
+                    <!-- /.block__wrap -->
+                    <p class="deposit">Город Денег</p>
+                </div>
+
+            </div>
+            <!-- /.calc__wrapper -->
+
+
+            <button class="btn calc__btn" id="btn">Инвестировать</button>
+        </section>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
