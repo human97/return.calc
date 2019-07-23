@@ -16,11 +16,12 @@
             <div class="calc__wrapper">
 
                 <h2>
-                    Калькулятор доходности
+                    Калькулятор <br>
+                    доходности <span class="title">портфеля</span>
                 </h2>
                 <div class="sum">
                     <div class="word sum__word">
-                        <h3>Cумма</h3>
+                        <h3>Cумма <span class="title2">инвестирования</span></h3>
                     </div>
                     <div class="number sum__namber">
                         <output id="outsum">1200000</output> &#8381;
@@ -73,66 +74,71 @@
         </section>
 
         <section class="calc calc__right">
-            <div class="calc__wrapper cwl">
-                <div class="output outputs_right">
-                    + <output id="return__deposit">
-                        80000
-                    </output> &#8381;
-                    <h3>6.5 % годовых</h3>
-                </div>
-                <!-- /.calc__output_left -->
-                <div class="barrels__wrap">
-                    <div class="barrel__wrap barrel__green">
-                        <div class="block1"></div>
-                        <div class="block2"></div>
-                        <div class="block3"></div>
-                    </div>
-                    <!-- /.block__wrap -->
-                    <div class="barrel__wrap barrel__white">
-                        <div class="block4"></div>
-                        <div class="block5"></div>
-                        <div class="block6"></div>
-                    </div>
-                    <!-- /.block__wrap -->
+            <div class="calc__right_wrapper">
 
-                    <div class="dep__wrap">
-                        <p class="deposit">Депозит</p>
-                        <!-- <div class="round">?</div> -->
-                    </div>
-                </div>
 
+                <div class="calc__wrapper cwl">
+                    <div class="output outputs_right">
+                        + <output id="return__deposit">
+                            80000
+                        </output> &#8381;
+                        <h3>6.5 % годовых</h3>
+                    </div>
+                    <!-- /.calc__output_left -->
+                    <div class="barrels__wrap">
+                        <div class="barrel__wrap barrel__green">
+                            <div class="block1 blocks_width blocks_height"></div>
+                            <div class="block2 blocks_width"></div>
+                            <div class="block3 blocks_width blocks_height"></div>
+                        </div>
+                        <!-- /.block__wrap -->
+                        <div class="barrel__wrap barrel__white">
+                            <div class="block4 blocks_width blocks_height"></div>
+                            <div class="block5 blocks_width"></div>
+                            <div class="block6 blocks_width blocks_height"></div>
+
+                            <div class="dep__wrap">
+                                <p class="deposit">Депозит</p>
+                                <!-- <div class="round">?</div> -->
+                            </div>
+                        </div>
+                        <!-- /.block__wrap -->
+
+                    </div>
+
+                </div>
+                <!-- /.calc__wrapper -->
+
+                <div class="calc__wrapper cwr">
+                    <div class="output outputs_right">
+                        + <output id="return__cityMoney">
+                            3500000
+                        </output> &#8381;
+                        <output>
+                            <h3 id="percent__right">25 % годовых</h3>
+                        </output>
+                    </div>
+                    <!-- /.calc__output_left -->
+                    <div class="barrels__wrap">
+                        <div class="barrel__wrap barrel__green">
+                            <div class="block1 blocks_width blocks_height"></div>
+                            <div class="block2 block2__right blocks_width"></div>
+                            <div class="block3 blocks_width blocks_height"></div>
+                        </div>
+                        <!-- /.block__wrap -->
+                        <div class="barrel__wrap barrel__white">
+                            <div class="block4 blocks_width blocks_height"></div>
+                            <div class="block5 blocks_width"></div>
+                            <div class="block6 blocks_width blocks_height"></div>
+                            <p class="deposit">Город Денег</p>
+                        </div>
+                        <!-- /.block__wrap -->
+                    </div>
+
+                </div>
+                <!-- /.calc__wrapper -->
             </div>
-            <!-- /.calc__wrapper -->
-
-            <div class="calc__wrapper cwr">
-                <div class="output outputs_right">
-                    + <output id="return__cityMoney">
-                        3500000
-                    </output> &#8381;
-                    <output>
-                        <h3 id="percent__right">25 % годовых</h3>
-                    </output>
-                </div>
-                <!-- /.calc__output_left -->
-                <div class="barrels__wrap">
-                    <div class="barrel__wrap barrel__green">
-                        <div class="block1"></div>
-                        <div class="block2 block2__right"></div>
-                        <div class="block3"></div>
-                    </div>
-                    <!-- /.block__wrap -->
-                    <div class="barrel__wrap barrel__white">
-                        <div class="block4"></div>
-                        <div class="block5"></div>
-                        <div class="block6"></div>
-                    </div>
-                    <!-- /.block__wrap -->
-                    <p class="deposit">Город Денег</p>
-                </div>
-
-            </div>
-            <!-- /.calc__wrapper -->
-
+            <!-- /.calc__right_wrapper -->
 
             <button class="btn calc__btn" id="btn">Инвестировать</button>
         </section>

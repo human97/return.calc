@@ -24,17 +24,17 @@ console.log(rpdMonth);
 let returnDeposit = document.querySelector('#return__deposit');
 let returnCityMoney = document.querySelector('#return__cityMoney');
 
-document.querySelector('#btn').onclick = function () {
+function count() { // функция расчета доходности для вкладов с ежемесячной капитализацией
 	rdpY = rpdMonth ** rangeMonth.value;
 	returnDep = rangeSum.value * rpdMonth * rdpY;
 	returnDep = returnDep - rangeSum.value;
 	returnDeposit.value = returnDep.toFixed();
 	rpcRadio = document.querySelectorAll('.percent');
 	console.log(rpcRadio);
-	let rpValue;
+	let rpValue; //годовая %ставка из radio для формулы
 	for (let i = 0; i < rpcRadio.length; i++) {
 		if (rpcRadio[i].checked) {
-			rpValue = rpcRadio[i].value; //годовая %ставка из radio для формулы
+			rpValue = rpcRadio[i].value;
 			let rp100 = rpValue * 100; //годовая %ставка из radio
 			document.querySelector('#percent__right').textContent = rp100 + ' % годовых';
 		}
@@ -48,6 +48,10 @@ document.querySelector('#btn').onclick = function () {
 	returnCity = returnCity - rangeSum.value;
 	returnCityMoney.value = returnCity.toFixed();
 }
+
+//rangeSum.onchange=count; // расчет происходит при изменении ползунка сумма
+//rangeMonth.onchange=count; // расчет происходит при изменении ползунка срок
+document.querySelector('#btn').onclick = count;
 
 
 
