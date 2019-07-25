@@ -505,6 +505,16 @@ input[name=contribution]::-webkit-slider-thumb {
 }
 
 @media (max-width: 420px) {
+  .calc__left {
+    top:10px;
+    padding: 25px;
+    height: 430px;
+  }
+.calc__right {
+  top:420px;
+  padding: 50px 0;
+}
+
   .calc__right_wrapper {
     width: 95%;
   }
