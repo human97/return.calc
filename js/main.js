@@ -3,7 +3,14 @@
 
 function count() { // функция расчета доходности для вкладов с ежемесячной капитализацией
 	let returnDep = (rangeSum.value * ((1 + rp / 12) ** rangeMonth.value)) - rangeSum.value; //доходность депозита под 6.5%
-	returnDeposit.value = returnDep.toFixed();
+	//returnDeposit.value = returnDep.toFixed();
+	returnDeposit.value = returnDep.toLocaleString('ru-RU', {
+		style: 'currency',
+		currency: 'RUB',
+		minimumIntegerDigits: '1',
+		minimumFractionDigits: '0',
+		maximumFractionDigits: '0'
+	});
 
 	let rpcRadio = document.querySelectorAll('.percent'); // выбор тарифа
 	for (let i = 0; i < rpcRadio.length; i++) {
@@ -15,38 +22,51 @@ function count() { // функция расчета доходности для 
 	}
 
 	returnCity = (rangeSum.value * ((1 + rpValue / 12) ** rangeMonth.value)) - rangeSum.value;
-	returnCityMoney.value = returnCity.toFixed();
+
+	returnCityMoney.value = returnCity.toLocaleString('ru-RU', {
+		style: 'currency',
+		currency: 'RUB',
+		minimumIntegerDigits: '1',
+		minimumFractionDigits: '0',
+		maximumFractionDigits: '0'
+	});
+
+	/* let height = ((returnCityMoney.value+rangeSum.value)/ rangeSum.value) * 100 + 'px';
+      document.querySelector('.block2__right').style.height = height;
+*/
 }
 
-document.querySelectorAll('input').forEach(function(e){ // все input - это число
-	e.value = parseFloat(e.value);
-	console.log(e.value)
-  });
+let allInputNumber = document.querySelectorAll('input'); // все input - это число
+allInputNumber.forEach(function (e) {
+	allInputNumber = parseFloat(e.value);
+	console.log(typeof allInputNumber)
+});
 
 let outsum = document.querySelector('#outsum');
 let rangeSum = document.querySelector('#rangeSum'); //сумма вклада
+
 rangeSum.oninput = function () {
 	outsum.value = rangeSum.value;
 }
 
+
 let outMonth = document.querySelector('#outMonth');
 let rangeMonth = document.querySelector('#rangeMonth');
+
 rangeMonth.oninput = function () {
 	outMonth.value = rangeMonth.value;
 }
 
 
 let rp = 0.065; // фиксированная годовая проц.ставка для депозита/100
-console.log(rp);
 let returnDeposit = document.querySelector('#return__deposit'); //вывод доходности депозита под 6.5%
 let returnCityMoney = document.querySelector('#return__cityMoney'); //вывод доходности города денег согласно тарифу
 
 
 
-rangeSum.onchange=count; // расчет происходит при изменении ползунка сумма
-rangeMonth.onchange=count; // расчет происходит при изменении ползунка срок
+rangeSum.onchange = count; // расчет происходит при изменении ползунка сумма
+rangeMonth.onchange = count; // расчет происходит при изменении ползунка срок
 document.querySelector('#btn').onclick = count; // расчёт доходности при клике на btn
-
 
 
 /*
