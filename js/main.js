@@ -1,35 +1,44 @@
-/* Формула для вкладов с ежемесячной капитализацией
+/* функция расчета по Формуле для вкладов с ежемесячной капитализацией
  Доходность=Сумма*(1+(Год.проц./12))**Месяцев*/
+ function capitalization(rate) {
+	 let result = (rangeSum.value * ((1 + rate / 12) ** rangeMonth.value)) - rangeSum.value;
+	return result;
+}
 
-function count() { // функция расчета доходности для вкладов с ежемесячной капитализацией
-	let returnDep = (rangeSum.value * ((1 + rp / 12) ** rangeMonth.value)) - rangeSum.value; //доходность депозита под 6.5%
-	//returnDeposit.value = returnDep.toFixed();
-	returnDeposit.value = returnDep.toLocaleString('ru-RU', {
+
+// функция для вывода доходности в денежном формате
+function outputCapitalisation(return2) {
+	let result2 = return2.toLocaleString('ru-RU', {
 		style: 'currency',
 		currency: 'RUB',
 		minimumIntegerDigits: '1',
 		minimumFractionDigits: '0',
 		maximumFractionDigits: '0'
 	});
+   return result2;
+}
+
+
+// функция расчета доходности для вкладов с ежемесячной капитализацией и вывода значений
+function count() { 
+
+	let returnDep = capitalization(rp); //доходность депозита под 6.5%
+	
+	//returnDeposit.value = returnDep.toFixed();
+	returnDeposit.value = outputCapitalisation(returnDep); // вывод доходности депозита под 6.5%
 
 	let rpcRadio = document.querySelectorAll('.percent'); // выбор тарифа
 	for (let i = 0; i < rpcRadio.length; i++) {
 		if (rpcRadio[i].checked) {
-			rpValue = rpcRadio[i].value; //годовая %ставка из radio для формулы
-			let rp100 = rpValue * 100; //годовая %ставка из radio
+			rpValue = rpcRadio[i].value; // годовая %ставка из radio для формулы
+			let rp100 = rpValue * 100; // годовая %ставка из radio
 			document.querySelector('#percent__right').textContent = rp100 + '% годовых';
 		}
 	}
 
-	returnCity = (rangeSum.value * ((1 + rpValue / 12) ** rangeMonth.value)) - rangeSum.value;
+	returnCity = capitalization(rpValue); // доходность гор.денег согласно тарифу
 
-	returnCityMoney.value = returnCity.toLocaleString('ru-RU', {
-		style: 'currency',
-		currency: 'RUB',
-		minimumIntegerDigits: '1',
-		minimumFractionDigits: '0',
-		maximumFractionDigits: '0'
-	});
+	returnCityMoney.value = outputCapitalisation(returnCity); // вывод доходности гор.денег согласно тарифу
 
 	/* let height = ((returnCityMoney.value+rangeSum.value)/ rangeSum.value) * 100 + 'px';
       document.querySelector('.block2__right').style.height = height;
@@ -39,20 +48,22 @@ function count() { // функция расчета доходности для 
 let allInputNumber = document.querySelectorAll('input'); // все input - это число
 allInputNumber.forEach(function (e) {
 	allInputNumber = parseFloat(e.value);
-	console.log(typeof allInputNumber)
 });
 
-let outsum = document.querySelector('#outsum');
+let outsum = document.querySelector('#outsum'); // вывод суммы вклада
 let rangeSum = document.querySelector('#rangeSum'); //сумма вклада
 
+
+// вывод суммы вклада при изменениии ползунка
 rangeSum.oninput = function () {
 	outsum.value = rangeSum.value;
 }
 
 
-let outMonth = document.querySelector('#outMonth');
-let rangeMonth = document.querySelector('#rangeMonth');
+let outMonth = document.querySelector('#outMonth'); // вывод срока вклада в месяцах
+let rangeMonth = document.querySelector('#rangeMonth'); // срок вклада в месяцах
 
+// вывод срока вклада при изменениии ползунка
 rangeMonth.oninput = function () {
 	outMonth.value = rangeMonth.value;
 }
