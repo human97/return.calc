@@ -136,8 +136,15 @@ input[type=range] {
   width: 100%;
   height: 5px;
   border-radius: 3px;
-  background-color: #ebebeb;
   outline: none;
+}
+
+#rangeSum {
+  background: -webkit-linear-gradient(left, #4bd1a0 0%, #4bd1a0 24%, #ebebeb 24%, #ebebeb 100%);
+}
+
+#rangeMonth {
+  background: -webkit-linear-gradient(left, #4bd1a0 0%, #4bd1a0 40%, #ebebeb 40%, #ebebeb 100%);
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -151,6 +158,7 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 50%;
   background-color: #4bd1a0;
   -webkit-box-shadow: 0 3px 12px 0 rgba(51, 51, 51, 0.3);
+  -ms-box-shadow: 0 3px 12px 0 rgba(51, 51, 51, 0.3);
   box-shadow: 0 3px 12px 0 rgba(51, 51, 51, 0.3);
 }
 
@@ -506,14 +514,15 @@ input[name=contribution]::-webkit-slider-thumb {
 
 @media (max-width: 420px) {
   .calc__left {
-    top:10px;
+    top: 10px;
     padding: 25px;
     height: 430px;
   }
-.calc__right {
-  top:420px;
-  padding: 50px 0;
-}
+
+  .calc__right {
+    top: 420px;
+    padding: 50px 0;
+  }
 
   .calc__right_wrapper {
     width: 95%;
