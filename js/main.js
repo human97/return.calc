@@ -5,8 +5,6 @@ function capitalization(rate) {
 	return result
 }
 
-// функция изменения цвета линии прогресса в input type range
-
 
 // функция для вывода доходности в денежном формате
 function outputCapitalisation(return2) {
@@ -42,10 +40,6 @@ function count() {
 	returnCity = capitalization(rpValue) // доходность гор.денег согласно тарифу
 
 	returnCityMoney.value = outputCapitalisation(returnCity) // вывод доходности гор.денег согласно тарифу
-
-	/* let height = ((returnCityMoney.value+rangeSum.value)/ rangeSum.value) * 100 + 'px'
-      document.querySelector('.block2__right').style.height = height
-*/
 }
 
 let allInputNumber = document.querySelectorAll('input') // все input - это число
@@ -56,33 +50,32 @@ allInputNumber.forEach(function (e) {
 let outsum = document.getElementById('outsum') // вывод суммы вклада
 let rangeSum = document.getElementById('rangeSum') //сумма вклада
 
-// вывод суммы вклада при изменениии ползунка и изменение цвета шкалы
+// вывод суммы вклада, изменение цвета шкалы и вывод доходности при изменениии ползунка
 rangeSum.oninput = function () {
-	outsum.value = rangeSum.value
-	let valRengePercent = (rangeSum.value * 100) / 5000000
-	rangeSum.style.background = `-webkit-linear-gradient(left, #4bd1a0 0%, #4bd1a0 ${valRengePercent}%, #ebebeb ${valRengePercent}%, #ebebeb 100%)`
+	outsum.value = this.value
+	let valRengePercent = (this.value * 100) / 5000000 //перевод в % input type range для градиента
+	this.style.background = `-webkit-linear-gradient(left, #4bd1a0 0%, #4bd1a0 ${valRengePercent}%, #ebebeb ${valRengePercent}%, #ebebeb 100%)`
+	count()
 }
 
 
 let outMonth = document.getElementById('outMonth') // вывод срока вклада в месяцах
 let rangeMonth = document.getElementById('rangeMonth') // срок вклада в месяцах
 
-// вывод срока вклада при изменениии ползунка и изменение цвета шкалы
+// вывод срока вклада, изменение цвета шкалы и вывод доходности при изменениии ползунка 
 rangeMonth.oninput = function () {
-	outMonth.value = rangeMonth.value
-	let valRengePercent = (rangeMonth.value * 100) / 60
-	rangeMonth.style.background = `-webkit-linear-gradient(left, #4bd1a0 0%, #4bd1a0 ${valRengePercent}%, #ebebeb ${valRengePercent}%, #ebebeb 100%)`
+	outMonth.value = this.value
+	let valRengePercent = (this.value * 100) / 60
+	this.style.background = `-webkit-linear-gradient(left, #4bd1a0 0%, #4bd1a0 ${valRengePercent}%, #ebebeb ${valRengePercent}%, #ebebeb 100%)`
+	count()
 }
 
 let rp = 0.065 // фиксированная годовая проц.ставка для депозита/100
-let returnDeposit = document.querySelector('#return__deposit') //вывод доходности депозита под 6.5%
-let returnCityMoney = document.querySelector('#return__cityMoney'); //вывод доходности города денег согласно тарифу
+let returnDeposit = document.getElementById('return__deposit') //вывод доходности депозита под 6.5%
+let returnCityMoney = document.getElementById('return__cityMoney'); //вывод доходности города денег согласно тарифу
 
 
-
-rangeSum.onchange = count // расчет происходит при изменении ползунка сумма
-rangeMonth.onchange = count // расчет происходит при изменении ползунка срок
-document.querySelector('#btn').onclick = count // расчёт доходности при клике на btn
+document.getElementById('btn').onclick = count // расчёт доходности при клике на btn
 
 
 /*
