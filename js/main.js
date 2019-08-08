@@ -77,6 +77,13 @@ let returnCityMoney = document.getElementById('return__cityMoney'); //вывод
 
 document.getElementById('btn').onclick = count // расчёт доходности при клике на btn
 
+document.querySelector('.radio__btn').addEventListener('input', function(e){
+	let radioLabel = e.target.className
+	console.log(radioLabel)
+	if(radioLabel==='percent'){
+		count()
+	}
+})
 
 /*
 a.oninput = function(){
