@@ -75,11 +75,13 @@ let returnDeposit = document.getElementById('return__deposit') //вывод до
 let returnCityMoney = document.getElementById('return__cityMoney'); //вывод доходности города денег согласно тарифу
 
 
-document.getElementById('btn').onclick = count // расчёт доходности при клике на btn
+document.getElementById('btn').onclick = function(){
+	count()
+	alert('Вы молодец!')
+}  // расчёт доходности при клике на btn
 
 document.querySelector('.radio__btn').addEventListener('input', function(e){
 	let radioLabel = e.target.className
-	console.log(radioLabel)
 	if(radioLabel==='percent'){
 		count()
 	}

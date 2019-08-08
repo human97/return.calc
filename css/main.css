@@ -100,6 +100,7 @@ body {
 
 .cwr {
   height: 100%;
+  width: 49%;
 }
 
 h2 {
@@ -528,6 +529,10 @@ input[name=contribution]::-webkit-slider-thumb {
     width: 95%;
   }
 
+  .cwr {
+    width: 38%;
+  }
+
   .outputs_right {
     font-size: 20px;
     line-height: 1.2;
@@ -535,6 +540,14 @@ input[name=contribution]::-webkit-slider-thumb {
 
   .blocks_width {
     width: 120px;
+  }
+}
+
+@media (max-width: 380px) {
+
+  .cwl,
+  .cwr {
+    width: 50%;
   }
 }
 
@@ -590,6 +603,7 @@ input[name=contribution]::-webkit-slider-thumb {
   .calc__right_wrapper {
     width: 220px;
   }
+
 
   .barrels__wrap {
     display: -webkit-box;
