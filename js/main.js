@@ -1,13 +1,13 @@
 /* функция расчета по Формуле для вкладов с ежемесячной капитализацией
  Доходность=Сумма*(1+(Год.проц./12))**Месяцев*/
-function capitalization(rate) {
+const capitalization = rate => {
 	let result = (rangeSum.value * ((1 + rate / 12) ** rangeMonth.value)) - rangeSum.value
 	return result
 }
 
 
 // функция для вывода доходности в денежном формате
-function outputCapitalisation(return2) {
+const outputCapitalisation = return2 => {
 	let result2 = return2.toLocaleString('ru-RU', {
 		style: 'currency',
 		currency: 'RUB',
@@ -33,7 +33,7 @@ function count() {
 		if (rpcRadio[i].checked) {
 			rpValue = rpcRadio[i].value // годовая %ставка из radio для формулы
 			let rp100 = rpValue * 100 // годовая %ставка из radio
-			document.querySelector('#percent__right').textContent = rp100 + '% годовых'
+			document.getElementById('percent__right').textContent = `${rp100}% годовых`
 		}
 	}
 
@@ -75,14 +75,14 @@ let returnDeposit = document.getElementById('return__deposit') //вывод до
 let returnCityMoney = document.getElementById('return__cityMoney'); //вывод доходности города денег согласно тарифу
 
 
-document.getElementById('btn').onclick = function(){
+document.getElementById('btn').onclick = function () {
 	count()
 	alert('Вы молодец!')
-}  // расчёт доходности при клике на btn
+} // так же возможно реализовать расчёт доходности при клике на btn
 
-document.querySelector('.radio__btn').addEventListener('input', function(e){
+document.querySelector('.radio__btn').addEventListener('input', function (e) {
 	let radioLabel = e.target.className
-	if(radioLabel==='percent'){
+	if (radioLabel === 'percent') {
 		count()
 	}
 })
