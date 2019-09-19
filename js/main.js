@@ -72,7 +72,7 @@ rangeMonth.oninput = function () {
 
 let rp = 0.065 // фиксированная годовая проц.ставка для депозита/100
 let returnDeposit = document.getElementById('return__deposit') //вывод доходности депозита под 6.5%
-let returnCityMoney = document.getElementById('return__cityMoney'); //вывод доходности города денег согласно тарифу
+let returnCityMoney = document.getElementById('return__cityMoney') //вывод доходности города денег согласно тарифу
 
 
 document.getElementById('btn').onclick = function () {
@@ -80,7 +80,9 @@ document.getElementById('btn').onclick = function () {
 	alert('Вы молодец!')
 } // так же возможно реализовать расчёт доходности при клике на btn
 
-document.querySelector('.radio__btn').addEventListener('input', function (e) {
+
+// расчет и вывод доходности города денег при изменении тарифа
+document.addEventListener('input', function (e) {
 	let radioLabel = e.target.className
 	if (radioLabel === 'percent') {
 		count()
