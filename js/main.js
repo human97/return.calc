@@ -42,11 +42,6 @@ function count() {
 	returnCityMoney.value = outputCapitalisation(returnCity) // вывод доходности гор.денег согласно тарифу
 }
 
-let allInputNumber = document.querySelectorAll('input') // все input - это число
-allInputNumber.forEach(function (e) {
-	allInputNumber = parseFloat(e.value)
-})
-
 let outsum = document.getElementById('outsum') // вывод суммы вклада
 let rangeSum = document.getElementById('rangeSum') //сумма вклада
 
@@ -57,7 +52,6 @@ rangeSum.oninput = function () {
 	this.style.background = `-webkit-linear-gradient(left, #4bd1a0 0%, #4bd1a0 ${valRengePercent}%, #ebebeb ${valRengePercent}%, #ebebeb 100%)`
 	count()
 }
-
 
 let outMonth = document.getElementById('outMonth') // вывод срока вклада в месяцах
 let rangeMonth = document.getElementById('rangeMonth') // срок вклада в месяцах
