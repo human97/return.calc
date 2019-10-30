@@ -368,6 +368,15 @@ input[name=contribution]::-webkit-slider-thumb {
 }
 
 .round {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 14px;
   font-weight: bold;
   font-style: normal;
@@ -380,6 +389,11 @@ input[name=contribution]::-webkit-slider-thumb {
   height: 27px;
   border-radius: 14px;
   border: solid 1px #4bd1a0;
+}
+
+.question__mark {
+  width: 7px;
+  height: 20px;
 }
 
 .calc__btn {
