@@ -1,3 +1,4 @@
+@import url('normalize.css');
 @import url('fonts.css');
 
 *,
@@ -355,6 +356,13 @@ input[name=contribution]::-webkit-slider-thumb {
   border-radius: 50%;
 }
 
+.dep__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px 0 0;
+}
+
 .deposit {
   font-family: Circe-Regular;
   font-size: 16px;
@@ -363,8 +371,8 @@ input[name=contribution]::-webkit-slider-thumb {
   font-stretch: normal;
   line-height: 2;
   letter-spacing: normal;
+  padding: 0 7px 0 0;
   text-align: center;
-  padding: 20px 0 0;
 }
 
 .round {
@@ -500,7 +508,7 @@ input[name=contribution]::-webkit-slider-thumb {
     line-height: 1.26;
   }
 
-  .deposit {
+  .dep__wrap {
     padding: 18.5px 0 0;
   }
 }
