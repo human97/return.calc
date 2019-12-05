@@ -411,6 +411,7 @@ input[name=contribution]::-webkit-slider-thumb {
 .round:after {
   display: block;
   position: absolute;
+  z-index: 3;
   -webkit-transition: opacity .7;
   transition: opacity .7;
   visibility: hidden;
@@ -419,7 +420,6 @@ input[name=contribution]::-webkit-slider-thumb {
 
 .round:before {
   bottom: 35px;
-  z-index: 3;
   padding: 5px;
   width: 220px;
   background-color: rgba(204, 204, 204, .7);
