@@ -363,6 +363,8 @@ input[name=contribution]::-webkit-slider-thumb {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 2px 0 0 0;
 }
@@ -380,6 +382,8 @@ input[name=contribution]::-webkit-slider-thumb {
 }
 
 .round {
+  position: relative;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -401,6 +405,41 @@ input[name=contribution]::-webkit-slider-thumb {
   height: 27px;
   border-radius: 14px;
   border: solid 1px #4bd1a0;
+}
+
+.round:before,
+.round:after {
+  display: block;
+  position: absolute;
+  -webkit-transition: opacity .7;
+  transition: opacity .7;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.round:before {
+  bottom: 35px;
+  z-index: 3;
+  padding: 5px;
+  width: 220px;
+  background-color: rgba(204, 204, 204, .7);
+  border-radius: 5px;
+  content: attr(data-title);
+  color: #000000;
+}
+
+.round:hover:before,
+.round:hover:after {
+  visibility: visible;
+  opacity: 1;
+}
+
+.round:after {
+  content: '';
+  border-top: 10px solid rgba(204, 204, 204, .7);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  bottom: 25px;
 }
 
 .question__mark {
