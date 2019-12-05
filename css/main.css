@@ -412,8 +412,9 @@ input[name=contribution]::-webkit-slider-thumb {
   display: block;
   position: absolute;
   z-index: 3;
-  -webkit-transition: opacity .7;
-  transition: opacity .7;
+  margin-bottom: 15px;
+  -webkit-transition: opacity .7s, margin-bottom .7s, visibility .7s;
+  transition: opacity .7s, margin-bottom .7s, visibility .7s;
   visibility: hidden;
   opacity: 0;
 }
@@ -430,6 +431,7 @@ input[name=contribution]::-webkit-slider-thumb {
 
 .round:hover:before,
 .round:hover:after {
+  margin-bottom: 0;
   visibility: visible;
   opacity: 1;
 }
