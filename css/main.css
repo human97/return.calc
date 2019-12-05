@@ -409,10 +409,10 @@ input[name=contribution]::-webkit-slider-thumb {
 
 .round:before,
 .round:after {
+  margin-bottom: 15px;
   display: block;
   position: absolute;
   z-index: 3;
-  margin-bottom: 15px;
   -webkit-transition: opacity .7s, margin-bottom .7s, visibility .7s;
   transition: opacity .7s, margin-bottom .7s, visibility .7s;
   visibility: hidden;
@@ -431,7 +431,7 @@ input[name=contribution]::-webkit-slider-thumb {
 
 .round:hover:before,
 .round:hover:after {
-  margin-bottom: 0;
+  margin-bottom: 2px;
   visibility: visible;
   opacity: 1;
 }
@@ -711,6 +711,16 @@ input[name=contribution]::-webkit-slider-thumb {
   .round {
     width: 20px;
     height: 20px;
+  }
+
+  .round:before,
+  .round:after {
+    margin-bottom: 8px;
+  }
+
+  .round:hover:before,
+  .round:hover:after {
+    margin-bottom: -5px;
   }
 
   .block1,
