@@ -16,9 +16,11 @@
 
 Расчет производится по формуле для вкладов с ежемесячной капитализацией.
 
-Доходность=Сумма*(1+(Год.проц./12))**Месяцев
+Доходность = Сумма*(1+(Год.проц./12))**Месяцев
 
-*Реализация на ванильном JS.*
+Стек: Vanilla JS(ES5/6), CSS, HTML, BEM, Zeplin, Git
+
+*Реализация Vanilla JS, CSS, HTML*
 
 
 ### Adaptive Calculator
@@ -41,4 +43,6 @@ The calculation is made according to the formula for deposits with a monthly cap
 
 Profitability = Amount * (1+ (Year.perc. / 12)) ** Months
 
-*Implementation on vanilla JS.*
+Stack: Vanilla JS, CSS, HTML, BEM, Zeplin, Git
+
+*Implementation Vanilla JS, CSS, HTML*
