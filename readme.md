@@ -18,9 +18,10 @@
 
 Доходность = Сумма*(1+(Год.проц./12))**Месяцев
 
+
 Стек: Vanilla JS(ES6), CSS, HTML, BEM, Zeplin, Git
 
-*Реализация Vanilla JS, CSS, HTML*
+*Реализация: Vanilla JS, CSS, HTML*
 
 
 ### Adaptive Calculator
@@ -43,6 +44,7 @@ The calculation is made according to the formula for deposits with a monthly cap
 
 Profitability = Amount * (1+ (Year.perc. / 12)) ** Months
 
-Stack: Vanilla JS(ES6)JS, CSS, HTML, BEM, Zeplin, Git
 
-*Implementation Vanilla JS, CSS, HTML*
+Stack: Vanilla JS(ES6), CSS, HTML, BEM, Zeplin, Git
+
+*Implementation: Vanilla JS, CSS, HTML*

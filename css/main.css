@@ -141,6 +141,7 @@ input[type=range] {
   outline: none;
 }
 
+/*
 #rangeSum {
   background: -webkit-linear-gradient(left, #4bd1a0 0%, #4bd1a0 24%, #ebebeb 24%, #ebebeb 100%);
 }
@@ -148,6 +149,7 @@ input[type=range] {
 #rangeMonth {
   background: -webkit-linear-gradient(left, #4bd1a0 0%, #4bd1a0 40%, #ebebeb 40%, #ebebeb 100%);
 }
+*/
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
