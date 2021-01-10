@@ -8,7 +8,7 @@ window.addEventListener('load', function () {
 
 
 /* функция расчета по Формуле для вкладов с ежемесячной капитализацией
- Доходность=Сумма*(1+(Год.проц./12))**Месяцев*/
+ Доходность=Сумма*(1+(Год.проц./12))**Месяцев */
 const capitalization = rate => {
 	let result = (rangeSum.valueAsNumber * ((1 + rate / 12) ** rangeMonth.valueAsNumber)) - rangeSum.valueAsNumber
 	return result
