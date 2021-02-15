@@ -1,4 +1,4 @@
-window.addEventListener('load', function () {
+window.addEventListener('load', function (e) {
 	outsum.value = outputCapitalisation(rangeSum.valueAsNumber)
 	outMonth.value = rangeMonth.valueAsNumber
 	changeColor(rangeSum, 5000000)
@@ -35,18 +35,26 @@ function count() {
 	returnDeposit.value = outputCapitalisation(returnDep) // вывод доходности депозита под 6.5%
 	let rpcRadio = document.querySelectorAll('.percent') // выбор тарифа
 
+	let rpValue // годовая %ставка из radio для формулы
 	for (let i = 0; i < rpcRadio.length; i++) {
 		if (rpcRadio[i].checked) {
-			rpValue = rpcRadio[i].value // годовая %ставка из radio для формулы
-			let rp100 = rpValue * 100 // годовая %ставка из radio
-			document.getElementById('percent__right').textContent = `${rp100}% годовых`
+			rpValue = rpcRadio[i].value
+			document.getElementById('percent__right').textContent = `${rpValue*100}% годовых`
 		}
 	}
 
-	returnCity = capitalization(rpValue) // доходность гор.денег согласно тарифу
+	//действия при изменении тарифа
+	document.querySelector('.radio__btn').addEventListener('change', function (e) {
+		if (e.target.matches('.percent')) {
+			rpValue = e.target.value
+			document.getElementById('percent__right').textContent = `${rpValue*100}% годовых`
+		}
+	})
 
+	returnCity = capitalization(rpValue) // доходность гор.денег согласно тарифу
 	returnCityMoney.value = outputCapitalisation(returnCity) // вывод доходности гор.денег согласно тарифу
 }
+
 
 let outsum = document.getElementById('outsum') // вывод суммы вклада
 let rangeSum = document.getElementById('rangeSum') //сумма вклада
@@ -86,9 +94,8 @@ document.getElementById('btn').addEventListener('click', () => {
 
 
 // расчет и вывод доходности города денег при изменении тарифа
-document.addEventListener('change', function (e) {
-	let radioLabel = e.target.className
-	if (radioLabel === 'percent') {
+document.querySelector('.radio__btn').addEventListener('change', function (e) {
+	if (e.target.matches('.percent')) {
 		count()
 	}
 })
