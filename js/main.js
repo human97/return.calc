@@ -36,12 +36,13 @@ function count() {
 	let rpcRadio = document.querySelectorAll('.percent') // выбор тарифа
 
 	let rpValue // годовая %ставка из radio для формулы
-	for (let i = 0; i < rpcRadio.length; i++) {
-		if (rpcRadio[i].checked) {
-			rpValue = rpcRadio[i].value
+
+	rpcRadio.forEach((e) => {
+		if (e.checked) {
+			rpValue = e.value
 			document.getElementById('percent__right').textContent = `${rpValue*100}% годовых`
 		}
-	}
+	})
 
 	//действия при изменении тарифа
 	document.querySelector('.radio__btn').addEventListener('change', function (e) {
